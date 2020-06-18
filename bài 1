@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Giải phương trình bậc nhất</title>
+	<meta charset="UTF-8">
+	<meta name="viewpost" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>Giải phương trình bậc nhất</h1>
+	<form method="post" action="">
+		<input type="text" name="a" id="a" style="width: 30px"/> x + 
+		<input type="text" name="b" id="b" style="width: 30px"/> = 0
+		<br/>
+		<input type="submit" value="Tính" name="kq" />
+	</form>
+	<?php
+	$result='';
+	if(isset($_POST['kq']))
+	{
+		$a = isset($_POST['a'])? (float)trim($_POST['a']):'';
+		$b = isset($_POST['b'])? (float)trim($_POST['b']):'';
+
+	if($a == ''){
+		echo'Bạn chưa nhập a';
+	}
+	elseif($b == ''){
+		echo'Bạn chưa nhập b';
+	}
+	elseif($a == '0'){
+		echo'Phương trình không thực hiện được - a khác 0';
+	}
+	else{
+		echo'$result = -($b) / $a';
+		}
+	}
+	?>
+	<?php echo'$result='; ?>
+</body>
+</html>
